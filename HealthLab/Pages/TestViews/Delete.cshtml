@@ -1,0 +1,50 @@
+﻿@page
+@model HealthLab.Pages.TestViews.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tests.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tests.TestName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tests.Age)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tests.Gender)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.Tests.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Tests.TestName)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Tests.Age)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Tests.Gender)
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <form method="post">
+        <input type="hidden" asp-for="Tests.Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a asp-page="./Index"  type="button" class="btn btn-info">Back to List</a>
+    </form>
+</div>

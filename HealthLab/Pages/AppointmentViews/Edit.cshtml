@@ -1,0 +1,55 @@
+﻿@page
+@model HealthLab.Pages.AppointmentViews.EditModel
+
+@{
+    ViewData["Title"] = "Edit Appointment";
+}
+
+<h4 class="d-flex justify-content-center">Edit Appointment</h4>
+<hr />
+<div class="d-flex justify-content-center">
+    <div class="col-md-6 font-weight-bold">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Appointment.id" />
+            <div class="form-group">
+                <label asp-for="Appointment.Name" class="control-label"></label>
+                <input asp-for="Appointment.Name" class="form-control" />
+                <span asp-validation-for="Appointment.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Appointment.Contact" class="control-label"></label>
+                <input asp-for="Appointment.Contact" class="form-control" />
+                <span asp-validation-for="Appointment.Contact" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Appointment.Disease" class="control-label"></label>
+                <input asp-for="Appointment.Disease" class="form-control" />
+                <span asp-validation-for="Appointment.Disease" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Appointment.Age" class="control-label"></label>
+                <input asp-for="Appointment.Age" class="form-control" />
+                <span asp-validation-for="Appointment.Age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Appointment.Gender" class="control-label"></label>
+                <input asp-for="Appointment.Gender" class="form-control" />
+                <span asp-validation-for="Appointment.Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Appointment.Brief" class="control-label"></label>
+                <input asp-for="Appointment.Brief" class="form-control" />
+                <span asp-validation-for="Appointment.Brief" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <a asp-page="./Index" type="button" class="btn btn-info">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

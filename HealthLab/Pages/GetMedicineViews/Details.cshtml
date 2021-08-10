@@ -1,0 +1,68 @@
+﻿@page
+@model HealthLab.Pages.GetMedicineViews.DetailsModel
+
+@{
+    ViewData["Title"] = "Detail of Order Medicine";
+}
+
+<div>
+    <h4>Detail of Medicine</h4>
+    <hr />
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.GetMedicine.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GetMedicine.Contact)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GetMedicine.Age)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GetMedicine.Gender)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GetMedicine.TestId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GetMedicine.Strips)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GetMedicine.Address)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.GetMedicine.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.GetMedicine.Contact)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.GetMedicine.Age)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.GetMedicine.Gender)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.GetMedicine.TestId)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.GetMedicine.Strips)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.GetMedicine.Address)
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div>
+    <a asp-page="./Edit" class="btn btn-info" asp-route-id="@Model.GetMedicine.id">Edit</a>
+    <a asp-page="./Index"  type="button" class="btn btn-info">Back to List</a>
+</div>

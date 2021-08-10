@@ -1,0 +1,67 @@
+﻿@page
+@model HealthLab.Pages.GetMedicineViews.DeleteModel
+
+@{
+    ViewData["Title"] = "Remove Order Medicine";
+}
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.GetMedicine.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GetMedicine.Contact)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GetMedicine.Age)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GetMedicine.Gender)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GetMedicine.TestId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GetMedicine.Strips)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GetMedicine.Address)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.GetMedicine.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.GetMedicine.Contact)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.GetMedicine.Age)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.GetMedicine.Gender)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.GetMedicine.TestId)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.GetMedicine.Strips)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.GetMedicine.Address)
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <form method="post">
+        <input type="hidden" asp-for="GetMedicine.id" />
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a asp-page="./Index" type="button" class="btn btn-info">Back to List</a>
+    </form>
+</div>

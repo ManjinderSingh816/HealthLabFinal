@@ -1,0 +1,60 @@
+﻿@page
+@model HealthLab.Pages.AppointmentViews.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete Appointment";
+}
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Appointment.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Appointment.Contact)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Appointment.Disease)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Appointment.Age)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Appointment.Gender)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Appointment.Brief)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.Appointment.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Appointment.Contact)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Appointment.Disease)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Appointment.Age)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Appointment.Gender)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Appointment.Brief)
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <form method="post">
+        <input type="hidden" asp-for="Appointment.id" />
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a asp-page="./Index" type="button" class="btn btn-info">Back to List</a>
+    </form>
+</div>

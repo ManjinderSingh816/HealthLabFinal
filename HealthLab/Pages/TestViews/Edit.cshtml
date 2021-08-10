@@ -1,0 +1,45 @@
+﻿@page
+@model HealthLab.Pages.TestViews.EditModel
+
+@{
+    ViewData["Title"] = "Edit Tests";
+}
+
+<h1 class="d-flex justify-content-center">Edit Tests</h1>
+<hr />
+<div class="d-flex justify-content-center">
+    <div class="col-md-6 font-weight-bold">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Tests.Id" />
+            <div class="form-group">
+                <label asp-for="Tests.Name" class="control-label"></label>
+                <input asp-for="Tests.Name" class="form-control" />
+                <span asp-validation-for="Tests.Name" class="text-danger"></span>
+            </div> <div class="form-group">
+                <label asp-for="Tests.TestName" class="control-label"></label>
+                <input asp-for="Tests.TestName" class="form-control" />
+                <span asp-validation-for="Tests.TestName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tests.Age" class="control-label"></label>
+                <input asp-for="Tests.Age" class="form-control" />
+                <span asp-validation-for="Tests.Age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tests.Gender" class="control-label"></label>
+                <input asp-for="Tests.Gender" class="form-control" />
+                <span asp-validation-for="Tests.Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <a asp-page="./Index" type="button" class="btn btn-info">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

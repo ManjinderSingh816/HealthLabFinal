@@ -1,0 +1,61 @@
+﻿@page
+@model HealthLab.Pages.GetMedicineViews.IndexModel
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+<h1>Home</h1>
+
+<p>
+    <a asp-page="Create"  type="button" class="btn btn-info">Click here to Get Medicine</a>
+</p>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.GetMedicine[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GetMedicine[0].Contact)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GetMedicine[0].TestId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GetMedicine[0].Strips)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GetMedicine[0].Address)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.GetMedicine)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Contact)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TestId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Strips)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.id"  type="button" class="btn btn-info">Edit</a>
+                    <a asp-page="./Details" asp-route-id="@item.id"  type="button" class="btn btn-info">Details</a>
+                    <a asp-page="./Delete" asp-route-id="@item.id"  type="button" class="btn btn-info">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

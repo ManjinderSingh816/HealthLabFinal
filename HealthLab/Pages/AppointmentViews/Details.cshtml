@@ -1,0 +1,60 @@
+﻿@page
+@model HealthLab.Pages.AppointmentViews.DetailsModel
+
+@{
+    ViewData["Title"] = "Appointment Details";
+}
+<div>
+    <h4>Appointment Details</h4>
+    <hr />
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Appointment.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Appointment.Contact)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Appointment.Disease)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Appointment.Age)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Appointment.Gender)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Appointment.Brief)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.Appointment.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Appointment.Contact)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Appointment.Disease)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Appointment.Age)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Appointment.Gender)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Appointment.Brief)
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div>
+    <a asp-page="./Edit" class="btn btn-info" asp-route-id="@Model.Appointment.id">Edit</a>
+    <a asp-page="./Index" type="button" class="btn btn-info">Back to List</a>
+</div>

@@ -1,0 +1,51 @@
+﻿@page
+@model HealthLab.Pages.GetMedicineViews.CreateModel
+
+@{
+    ViewData["Title"] = "Get Medicine";
+}
+<h4 class="d-flex justify-content-center">Get Medicine</h4>
+<hr />
+<div class="d-flex justify-content-center">
+    <div class="col-md-6 font-weight-bold">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="GetMedicine.Name" class="control-label"></label>
+                <input asp-for="GetMedicine.Name" class="form-control" />
+                <span asp-validation-for="GetMedicine.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GetMedicine.Contact" class="control-label"></label>
+                <input asp-for="GetMedicine.Contact" class="form-control" />
+                <span asp-validation-for="GetMedicine.Contact" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GetMedicine.TestId" class="control-label"></label>
+                <select asp-for="GetMedicine.TestId" class="form-control" asp-items="@(new SelectList(Model.tests, "Id","TestName"))">
+                    <option value="" selected disabled>--Select Test--</option>
+                </select>
+                <span asp-validation-for="GetMedicine.TestId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GetMedicine.Strips" class="control-label"></label>
+                <input asp-for="GetMedicine.Strips" class="form-control" />
+                <span asp-validation-for="GetMedicine.Strips" class="text-danger"></span>
+            </div>
+                        <div class="form-group">
+    <label asp-for="GetMedicine.Address" class="control-label"></label>
+    <input asp-for="GetMedicine.Address" class="form-control" />
+    <span asp-validation-for="GetMedicine.Address" class="text-danger"></span>
+</div>
+                        <div class="form-group">
+                            <input type="submit" value="Create" class="btn btn-primary" />
+                            <a asp-page="Index" type="button" class="btn btn-info">Back to List</a>
+                        </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

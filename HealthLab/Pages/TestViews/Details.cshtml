@@ -1,0 +1,51 @@
+﻿@page
+@model HealthLab.Pages.TestViews.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div>
+    <h4>Details Tests</h4>
+    <hr />
+
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tests.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tests.TestName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tests.Age)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tests.Gender)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.Tests.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Tests.TestName)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Tests.Age)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Tests.Gender)
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div>
+    <a asp-page="./Edit" class="btn btn-info" asp-route-id="@Model.Tests.Id">Edit</a>
+    <a asp-page="./Index"  type="button" class="btn btn-info">Back to List</a>
+</div>
